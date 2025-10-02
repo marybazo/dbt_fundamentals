@@ -1,7 +1,7 @@
 select 
     ord.order_id as order_id,
     ord.customer_id as customer_id,
-    sum(pay.amount) as ammount 
+    sum(pay.amount) as amount 
 from 
     {{ ref('stg_jaffle_shop__orders') }} as ord
     join {{ ref('stg_stripe__payments') }} as pay 
